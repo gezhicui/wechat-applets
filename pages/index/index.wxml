@@ -1,2 +1,4 @@
-<view>首页</view>
-<view class="iconfont .icon-star-filled"></view>
+<view>
+  <!-- 使用搜索框组件 -->
+  <SearchInput></SearchInput>
+</view>
