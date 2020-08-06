@@ -1,5 +1,6 @@
 // pages/category/index.js
 import {request} from "../../request/index.js"
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
   data: {
     //左侧菜单数据
@@ -10,6 +11,7 @@ Page({
     currentIndex:0
   },
   Cates:[],
+  //⽣命周期回调—监听⻚⾯加载
   onLoad: function (options) {
     //获取本地存储中有旧的数据
     const Cates = wx.getStorageSync('cates');
@@ -33,19 +35,30 @@ Page({
     }
   },
   //获取分类数据
-  getCates(){
-    request({
-      url:'https://api-hmugo-web.itheima.net/api/public/v1/categories', 
-    }).then(result=>{
-      this.Cates=result.data.message;
-      //把接口数据存入到本地存储中
-      wx.setStorageSync('cates', {time:Date.now(),data:this.Cates})
-      let leftMenuList=this.Cates.map(v=>v.cat_name);
-      let rightContent=this.Cates[0].children;
-      this.setData({
-        leftMenuList,
-        rightContent
-      })
+  async getCates(){
+    // request({
+    //   url:'/categories', 
+    // }).then(result=>{
+    //   this.Cates=result.data.message;
+    //   //把接口数据存入到本地存储中
+    //   wx.setStorageSync('cates', {time:Date.now(),data:this.Cates})
+    //   let leftMenuList=this.Cates.map(v=>v.cat_name);
+    //   let rightContent=this.Cates[0].children;
+    //   this.setData({
+    //     leftMenuList,
+    //     rightContent
+    //   })
+    // })
+    // 使用es7async/await改造
+    const res = await request({url:'/categories'})
+    this.Cates=res;
+    //把接口数据存入到本地存储中
+    wx.setStorageSync('cates', {time:Date.now(),data:this.Cates})
+    let leftMenuList=this.Cates.map(v=>v.cat_name);
+    let rightContent=this.Cates[0].children;
+    this.setData({
+      leftMenuList,
+      rightContent
     })
   },
   //点击切换左侧按钮
