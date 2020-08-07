@@ -1,1 +1,126 @@
 /* pages/pay/index.wxss */
+/* pages/cart/index.wxss */
+.address_btn{
+  padding: 20rpx;
+}
+.user_info_row{
+  display: flex;
+  padding: 20rpx;
+}
+.uaer_info{
+  flex: 5;
+}
+.user_phone{
+  flex: 3;
+  text-align: right;
+}
+.cart_title{
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: var(--themeColor);
+  border-top: 1rpx solid currentColor;
+  border-bottom: 1rpx solid currentColor;
+}
+.cart_item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.cart_chk_wrap{
+  flex: 1;
+  text-align: center;
+}
+.cart_img_wrap{
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+.image{
+  width: 80%;
+}
+.cart_info_wrap{
+  flex: 4;
+
+  color: #666;
+}
+.goods_name{
+  margin-bottom: 15rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_price_wrap{
+  display: flex;
+  justify-content: space-between;
+}
+.goods_price{
+  color: var(--themeColor);
+  font-size: 34rpx;
+}
+.cart_num_tool{
+  display: flex;
+}
+.num_edit{
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+}
+.goods_num{
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer_tool{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 90rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.all_chk_wrap{
+  height: 100%;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.total_price_wrap{
+  flex: 4;
+  text-align: right;
+  padding-right: 20rpx;
+}
+.total_price_text{
+  color: var(--themeColor);
+  font-size: 35rpx;
+}
+.order_pay_wrap{
+  height: 100%;
+  flex: 2;
+  background-color: var(--themeColor);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nullText{
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #666;
+  margin: 20rpx;
+}
